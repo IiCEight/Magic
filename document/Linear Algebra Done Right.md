@@ -1158,7 +1158,16 @@ for every $w\in W.$
 
 #### matrix version of SVD
 
-Supposle $A$ is a $p$-by-$n$ matrix of rank $m\geq1.$ Then there exist a $p$-by-$m$ matrix $B$ with orthonormal columns, an m-by-$m$ diagonal matrix $D$ with positive numbers on the diagonal, and an $n$-by-$m$ matrix $C$ with orthonormal columns such that
+Supposle $A$ is a $p$-by-$n$ matrix of rank $m\geq1.$ Then there exist a $p$-by-$m$ matrix $B$ with orthonormal columns, an $m$-by-$m$ diagonal matrix $D$ with positive numbers on the diagonal, and an $n$-by-$m$ matrix $C$ with orthonormal columns such that
 $$
 A=BDC^*.
+$$
+
+$B$ is a matrix whose colums are $f_1, ...,f_m$
+$D$ is a matrix whose diagonal entries are $s_1,...,s_m$
+$C$ is a matrix whose colums are $e_1,...,e_m$
+
+equvialently,
+$$
+A = \sum_{i= 1}^ms_if_ie_i^T
 $$

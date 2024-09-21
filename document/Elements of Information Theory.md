@@ -55,7 +55,7 @@ Note that $H (Y|X) = H (X|Y )$.
 
 #### relative entropy or Kullback–Leibler distance
 
-The **relative entropy** or **Kullback–Leibler distance** between two probability mass functions p(x) and q(x) is defined as
+The **relative entropy** or **Kullback–Leibler distance** between two probability mass functions $p(x)$ and $q(x)$ is defined as
 $$
 D(p \parallel q) = \sum_{x \in \mathcal X} p(x) \log \frac{p(x)}{q(x)} =\\
 E_p\log \frac{p(x)}{q(x)}
@@ -64,12 +64,38 @@ $$
 #### mutual information
 
 $$
-I(X;Y) = \sum_{x,y}p(x,y)\frac{p(x,y)}{p(x)p(y)}=\\
+I(X;Y) = \sum_{x,y}p(x,y)\log\frac{p(x,y)}{p(x)p(y)}=\\
 D(p(x,y)||p(x)p(y))=\\
-H(X)-H(Y|X)
+H(X)-H(X|Y)\
 $$
 
+#### Mutual information and entropy
+$$
+I(X;Y) =I(Y;X)=H(X)-H(X|Y)=H(Y)-H(Y|X)=H(X)+H(Y)-H(X,Y)
+$$
 
+#### Theorem 2.5.1 (Chain rule for entropy)
+$$
+H(X_1, X_2, ..., X_n)= \sum_{i}H(X_i | X_{i - 1}, ..., X_1)
+$$
+
+#### conditional mutual information
+$$
+I(X;Y | Z) = H(X | Z)- H(X| Y, Z)=\sum_{x,y,z}p(x,y,z)\log\frac{p(x,y |z)}{p(x|z)p(y|z)}
+$$
+See geometric meaning. ($X \cap Y - X \cap Y \cap Z$)
+$$
+I(X;Y|Z)=\sum_z I(X;Y |Z=z)
+$$
+where
+$$
+I(X;Y|Z=z)=\sum_{x,y}p(x,y|z)\log\frac{p(x,y|z)}{p(x|z)p(y|z)}
+$$
+
+#### Chain rule for information
+$$
+I(X_1, X_2, ..., X_n;Y)= \sum_{i}I(X_i ;Y| X_{i - 1}, ..., X_1)
+$$
 
 #### Theorem 2.6.2 (Jensen's inequality) 
 
@@ -85,8 +111,6 @@ $$
 $$
 D(p||q) \ge 0
 $$
-
-
 
 
 
@@ -140,6 +164,32 @@ $$
 p(x,y|z)=p(x|z)p(y|z)
 $$
 
-$$
+### 2.8 DATA-PROCESSING INEQUALITY
 
+#### Markov chain
+Random variable $X,Y,Z$ are said to form  a Markov chain in that order (denoted by $X \rightarrow Y \rightarrow  Z$) if the conditional distribution of $Z$ depends only on $Y$ and is conditionally independent of $X$.
+
+#### Data-processing inequality
+if $X \rightarrow Y \rightarrow  Z$, then
 $$
+I(X,Y) \ge I(X,Z)
+$$
+### 2.9 SUFFICIENT STATISTICS
+
+
+### 2.10 FANO’S INEQUALITY
+For any estimator $\hat{X}$ such that $X\to Y\to\hat{X}$, with $P_e=\Pr(X\neq\hat{X})$ , we have
+$$H(P_e)+P_e\log|\mathcal{X}|\geq H(X|\hat{X})\geq H(X|Y).$$
+
+This inequality can be weakened to
+
+$$1+P_e\log|\mathcal{X}|\geq H(X|Y)$$
+
+or
+
+$$P_e\geq\frac{H(X|Y)-1}{\log|\mathcal{X}|}.$$
+
+#### Lemma 2.10.1 
+If $X$ and $X^\prime$ are i.i.d. with entropy $H(X)$,
+$$\Pr(X=X^{\prime})\geq2^{-H(X)},$$
+
