@@ -30,7 +30,7 @@ $[A_{ij}]$ means a matrix in which the entry at row $i$ and column $j$ is $A_{ij
 
 The **mean** of $\mathbf{X}$ is $\boldsymbol{\mu} = E[\mathbf {X}]$ and we define its **variance-covariance matrix** as
 $$
-Cov(\mathbf{X} = E[(\mathbf{X} -\boldsymbol{\mu})(\mathbf{X} -\boldsymbol{\mu})^T]) =[\sigma_{ij}]
+Cov(\mathbf{X}) = Cov(E[(\mathbf{X} -\boldsymbol{\mu})(\mathbf{X} -\boldsymbol{\mu})^T]) =[\sigma_{ij}]
 $$
 
 #### properties

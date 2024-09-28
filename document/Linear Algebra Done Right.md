@@ -264,7 +264,7 @@ $$
 
 ####  matrix of a linear map
 
-suppose $T \in \mathcal L(V, W)$ and $v_1, ..., v_n$ is a basis of $V$ and $w_1, ..., w_n$ is a basis of $W$. The matrix of $T$ with respect to these bases is the m-by-n matrix $\mathcal M(𝑇)$ whose entries $𝐴_{j, k}$ are defined by
+suppose $T \in \mathcal L(V, W)$ and $v_1, ..., v_n$ is a basis of $V$ and $w_1, ..., w_m$ is a basis of $W$. The matrix of $T$ with respect to these bases is the m-by-n matrix $\mathcal M(𝑇)$ whose entries $𝐴_{j, k}$ are defined by
 $$
 Tv_k = A_{1, k}w_1+ ...+A_{m,k}w_m
 $$
@@ -1131,10 +1131,14 @@ $$
 for every $v\in V.$
 
 
+$$
+T*Te_i = s^2e_i, \ \ i=1,...,m \  \\ f_i = \frac{Te_i}{s_i}
+$$
 
-**(a) $f_i$ is an orthonormal basis of $range \ T$.**
+**(a) $e_i$ is an orthonormal basis of $(null \ T)^{\perp}$, and they are orthonormal eigenvecotors of $T*T$.**
 
-**(b) $e_i$ is an orthonormal basis of $(null \ T)^{\perp}$**
+**(b) $f_i$ is an orthonormal basis of $range \ T$, and $f_i = \frac{Te_i}{s_i}$**
+
 
 
 
