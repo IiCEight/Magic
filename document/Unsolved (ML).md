@@ -18,3 +18,19 @@ Inequality proof.
 Trace differential
 
 
+### 5. PCA meanings
+
+
+### ~~6. SVD implementation~~
+
+useless
+
+### 7. Generalized eigenvalue problem
+
+
+
+### 8. NMF algorithm
+
+
+### 9. graph-preserving criterion
+

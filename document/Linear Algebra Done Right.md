@@ -1175,3 +1175,45 @@ equvialently,
 $$
 A = \sum_{i= 1}^ms_if_ie_i^T
 $$
+
+## Chapter 8 Operators on Complex Vector Spaces
+### 8A Generalized Eigenvectors and Nilpotent Operators
+
+### sequence of increasing null spaces
+
+Suppose $T\in \mathcal L(V)$. Then
+$$
+\{0\}=\mathrm{null~}T^0\subseteq\mathrm{null~}T^1\subseteq\cdots\subseteq\mathrm{null~}T^k\subseteq\mathrm{null~}T^{k+1}\subseteq\cdots
+$$
+
+
+#### equality in the sequence of null spaces
+
+Suppose $T\in \mathcal L(V)$ and =$m$ is a nonnegative integer such that
+$$
+\text{null T}^{m}=\text{null T}^{m+1}
+$$
+Then
+$$
+\text{null T}^{m}=\text{null T}^{m+1}=\text{null T}^{m+2}=\text{null T}^{m+3}=\cdots
+$$
+
+#### null spaces stop growing
+
+Suppose $T\in \mathcal L(V)$. Then
+$$
+\text{null T}^{\dim V}=\text{null T}^{\dim V+1}=\text{null T}^{\dim V+2}=\cdots
+$$
+
+#### 8.4
+Suppose $T\in \mathcal L(V)$. Then
+$$
+V=\text{null}\ T^{\dim V}\oplus\text{range} \ T^{\dim V}.
+$$
+
+#### generalized eigenvector
+
+Suppose $T\in\mathcal{L}(V)$ and $\lambda$ is an eigenvalue of $T.$ A vector $v\in V$ is called a generalized eigenvector of $T$ corresponding to $\lambda$ if $v\neq0$ and
+$$(T-\lambda I)^kv=0$$
+
+for some positive integer $k$.
