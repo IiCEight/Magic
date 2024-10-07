@@ -3,6 +3,7 @@
 ### 1. SVM solution and python implementation
 
 
+
 ### 2. KL divergence Anomaly Detection
 
 Optimization problem
@@ -22,11 +23,11 @@ Trace differential
 
 
 ### ~~6. SVD implementation~~
-
 useless
 
-### 7. Generalized eigenvalue problem
-
+### ~~7. Generalized eigenvalue problem~~
+skipped
+Reference: eigenvalue problem paper
 
 
 ### 8. NMF algorithm
