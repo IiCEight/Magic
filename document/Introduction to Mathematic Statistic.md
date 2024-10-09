@@ -12,6 +12,29 @@ Many of the functions used in calculus and in this book are functions that map r
 
 Given **a random experiment** with a sample space $C$, consider  two random variable $X_1$ and $X_2$, which assign to each element  $c$ of $C$ **one** and only one ordered variables $X_1(c)=x_1, X_2(c)=x_2$. Then we say that $(X_1, X_2)$ is a **random vector**. The space of $(X_1, X_2)$ is the set of ordered pairs $D=\{(x_1, x_2)|x_1 = X_1(c), x_2 = X_2(c), c \in C\}$.
 
+
+### 2.3 Conditional Distributions and Expectations
+
+In this section, we discuss **conditional distributions**, i.e., **the distribution of one of the random variables when the other has assumed a specific value.**
+
+Suppose $p_{X_1, X_2}(x_1,x_2)$ is joint pmf, and $p_{X_1}(x_1), p_{X_2}(x_2)$ are the marginal pmf of $X_1$ and $X_2$
+So the conditional probability
+$$
+P\{X_2=x_2 | X_1=x_1\}=\frac {P\{X_2=x_2, X_1=x_1\}}{P\{ X_1=x_1\}}=\frac{p_{X_1, X_2}(x_1,x_2)}{p_{X_1}(x_1)}
+
+$$
+for all $x_2$ in the support $S_{X_2}$ of $X_2$. Define this function as 
+$$
+p_{X_2,X_2}(x_2|x_1)=\frac{p_{X_2, X_1}(x_1,x_2)}{p_{X_1}(x_1)}, \ \ x_2 \in S_{X_2}
+$$
+It's a pmf, so we call it **conditional pmf**  of the discrete type of random variable $X_2$, given that the discrete type of random variable $X_1 = x_1$.
+
+That means for every $X_1, p(x_1) > 0$, there has a conditional pmf of $X_2$.
+
+Continuous type is similar.
+
+
+
 #### 2.6.1 Multivariate Variance-Covariance Matrix
 
 Let $\mathbf{X} = (X_1, X_2, ..., X_n)^T$ be an n-dimensional random vector.
@@ -127,3 +150,98 @@ $$
 $$
 
 Hence, given two critical regions $C_1$ and $C_2$, which are both of size $\alpha$, $C_1$ is better than $C_2$ if $\gamma C_1 (\theta) \ge \gamma C_2 (\theta)$ for all $\theta \in \omega_1$.
+
+
+## Chapter 5 Consistency and Limiting Distributions
+
+### 5.1 Convergence in Probability
+
+#### Definition 5.1.1 
+
+Let $\{X_n\}$ be a sequence of random variables and let $X$ be a random variable defined on a sample space. We say that $X_1$ converges in probability to $X$ if, for all $\epsilon >0$
+$$
+\lim_{n\rightarrow \infty}P[|X_n - X|\ge \epsilon] =0
+$$
+or equivalently
+$$
+\lim_{n\rightarrow \infty}P[|X_n - X|< \epsilon] =1
+$$
+If so, we write
+$$
+X_n \xrightarrow{P}X
+$$
+
+#### Weak Law of Large Numbers
+
+Let $\{X_n\}$ be a sequence of i.i.d random variables having common mean $\mu$ and variance $\sigma^2 < \infty$.
+$$
+\bar{X}_n\xrightarrow{P}\mu.
+$$
+
+Proof:
+The variance of $\bar{X}_n$ is $\frac {\sigma^2}{n}$ , so by Chebyshev’s inequality,
+$$
+
+P[|\bar X_n-\mu|\ge \epsilon] \le\frac{\sigma^2}{n\epsilon^2}
+$$
+
+#### Theorem 5.1.2 Property
+
+Suppose $X_n \xrightarrow{P}X$ and $Y_n \xrightarrow{P}Y$ . Then $X_n+Y_n \xrightarrow{P}X+Y$ , $X_nY_n \xrightarrow{P}XY$.
+
+
+Suppose $X_n \xrightarrow{P}X$. Then $aX_n \xrightarrow{P}aX$ .
+
+Suppose $X_n \xrightarrow{P}a$ and the real function $g$ is  continuous at $a$. Then $g(X_n) \xrightarrow{P}g(a)$. And if $X_n \xrightarrow{P}X$ and $g$ is a continuous function, then $g(X_n) \xrightarrow{P}g(X)$.
+
+
+#### Consistency
+Let $X$ be a random variable with cdf $F(x, \theta)$,$\theta \in \Omega$. Let $X_1,...,X_n$ be a sample from the distribution of $X$ and let $T_n$ denote a statistic. We say $T_n$ is a consistent estimator of $\theta$ if
+$$
+T_n \xrightarrow{P} \theta
+$$
+
+#### Convergence in Distribution
+
+Let $\{X_n\}$ be a sequence of random variables. Let $F_{X_n}$ and $F_X$ be, respectively, the cdfs of $X_n$ and $X$. Let $C(F_X)$ denote the set of all points where $F_X$ is continuous. We say that $X_n$ **converges in distribution** to $X$ if
+$$
+\lim_{n\rightarrow \infty}F_{X_n}(x)=F_X,\text{for all}\ x\in C(F_{X})
+$$
+We denote this convergence by
+$$
+X_n \xrightarrow{D}X
+$$
+This material on convergence in probability and in distribution comes under what statisticians and probabilists refer to as **asymptotic theory**. Often, we say that the distribution of $X$ is the **asymptotic distribution** or the **limiting distribution** of the sequence $\{X_n\}$.
+
+
+If $X_n$ converges to $X$ in probability, then $X_n$ converges to $X$ in distribution.
+
+
+
+## Chapter 6 Maximum Likelihood Methods
+
+### 6.1 Maximum Likelihood Estimation
+
+**Likelihood function**
+$$
+L(\theta;\boldsymbol{x})=\prod_{i = 1}^nf(x_i;\theta)
+$$
+
+#### Regularity Conditions
+(R0) The cdfs are distinct;
+(R1) The pdfs have common support for all $\theta$
+(R2) The **true** value point $\theta_0$ is an interior point in $\Omega$
+
+
+#### Theorem 6.1.1
+
+Assume that $\theta_0$ is the true parameter and that $E_{\theta_0}[f(X_i;\theta)/f(X_i;\theta_0)]$ exist. Under assumptions (R0) and (R1),
+$$
+\lim_{n\rightarrow\infty}P_{\theta_0}[L(\theta_0,X) >L(\theta,X)]=1,\text{for all }\theta \ne \theta_0
+$$
+
+
+
+## Chapter 11 Bayesian Statistics
+
+#### Prior and Posterior Distributions

@@ -35,3 +35,5 @@ Reference: eigenvalue problem paper
 
 ### 9. graph-preserving criterion
 
+
+### 10.monent generating function
