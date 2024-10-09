@@ -797,6 +797,13 @@ Suppose $e_1,...,e_n$ is an orthonormal basis of $V$ and $u,v\in V.$ Then
 
 (c) $\langle u, v\rangle = \langle u, e_1\rangle \overline {\langle v, e_1\rangle }+ \cdots + \langle u, e_n\rangle \overline {\langle v, e_n\rangle }.$
 
+Suppose 
+$$
+v = \sum a_ie_i\\
+<v,e_i> = <a_ie_i,e_i>=a_i
+$$
+
+
 
 
 #### linear functional, dual space,
@@ -1132,7 +1139,9 @@ for every $v\in V.$
 
 
 $$
-T*Te_i = s^2e_i, \ \ i=1,...,m \  \\ f_i = \frac{Te_i}{s_i}
+T*Te_i = s^2e_i, \ \ i=1,...,m \ 
+\\Te_i=s_if_i
+\\ f_i = \frac{Te_i}{s_i}
 $$
 
 **(a) $e_i$ is an orthonormal basis of $(null \ T)^{\perp}$, and they are orthonormal eigenvecotors of $T*T$.**
