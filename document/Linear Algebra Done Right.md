@@ -270,6 +270,11 @@ Tv_k = A_{1, k}w_1+ ...+A_{m,k}w_m
 $$
 
 
+
+
+
+
+
 ### 3D Invertibility and Isomorphisms
 
 #### inverse is unique
@@ -333,14 +338,38 @@ x_n\\
 \end{pmatrix}
 $$
 
+#### Linear maps act like matrix multiplication (Beautiful)
 
-#### linear maps act like matrix multiplication
+Suppose $T \in \mathcal L(V, W)$ and $v \in V$. Suppose $v_1, ..., v_n$ is a basis of $V$ and $w_1, ..., w_m$ is  a basis of $W$. Then
+$$
+\mathcal M (T)\mathcal M (v)=\mathcal M (Tv)
+$$
+Proof:
 
-proof see page 89
+Since $v = \sum_j^nb_jv_j$, so $b = (b_1,...,b_n)^T$ is the coordinate of $v$ in the basis of $v_1, ..., v_n$. Then by the matrix of the vector
+$$
+M(v) = b
+$$
+So we have
+$$
+Tv = T(\sum_{j=1}^nb_jv_j)=\sum_{j}^nb_jT(v_j)
+$$
+By then 3C matrix of the linear map, we have $Tv_j = \sum_i^mA_{ij}w_i$. Then
+$$
+Tv=\sum_{j}^nb_jT(v_j) = \sum_j^nb_j\sum_i^mA_{ij}w_i=\sum_i^m(\sum_j^nb_jA_{ij})w_i
+$$
+So, the coordinate of $Tv$ in the basis of $w_1, ..., w_m$ is $(\sum_j^nb_jA_{1j}, ...,\sum_j^nb_jA_{mj})$. By this, 
+$$
+\mathcal{M}(Tv) =
 
+\begin{pmatrix}
+\sum_j^nb_jA_{1j}\\
+\sum_j^nb_jA_{2j}\\
+...\\
+\sum_j^nb_jA_{3j}\\
+\end{pmatrix}= Ab = \mathcal{M}(T)\mathcal{M}(v) 
+$$
 
-
-### Important !!!
 
 The result above can be used to think of every linear map (from a finite-dimensional vector space to another finite-dimensional vector space) as a matrix multiplication map after suitable relabeling via the isomorphisms given by $\mathcal M$.
 
