@@ -262,16 +262,12 @@ $$
 
 ### 3C Matrices
 
-####  matrix of a linear map
+####  matrix of a linear map (Important!)
 
 suppose $T \in \mathcal L(V, W)$ and $v_1, ..., v_n$ is a basis of $V$ and $w_1, ..., w_m$ is a basis of $W$. The matrix of $T$ with respect to these bases is the m-by-n matrix $\mathcal M(𝑇)$ whose entries $𝐴_{j, k}$ are defined by
 $$
 Tv_k = A_{1, k}w_1+ ...+A_{m,k}w_m
 $$
-
-
-
-
 
 
 
@@ -305,9 +301,9 @@ suppose $v_1, ..., v_n$ is a basis of $V$ and $w_1, ..., w_n$ is a basis of $W$.
 
 
 
-#### definition: matrix of a vector
+#### definition: matrix of a vector (Important)
 
-uppose $v \in V$ and $v_1, ..., v_n$ is a basis of $V$. The matrix of $v$ with respect to this basis is the n-by-1 matrix
+Suppose $v \in V$ and $v_1, ..., v_n$ is a basis of $V$. The matrix of $v$ with respect to this basis is the n-by-1 matrix
 $$
 \mathcal M(v) = 
 \begin{pmatrix}
@@ -323,6 +319,8 @@ v = b_1v_1 + ...+ b_nv_n
 $$
 It transform a vector to the $n\times 1$ matrix. So vector can be handle as matrix.
 
+**This means the matrix of a vector $v$ in some basis is the coordinate of $v$ in corresponding basis.**
+
 
 
 **Example:**
@@ -337,6 +335,8 @@ x_2\\
 x_n\\
 \end{pmatrix}
 $$
+
+
 
 #### Linear maps act like matrix multiplication (Beautiful)
 
@@ -371,6 +371,25 @@ $$
 $$
 
 
+
+**This means if  the coordinate of $v$ in the basis of $v_1, ..., v_n$ is $b = (b_1,...,b_n)^T$, then the coordinate of $Tv$ in the basis of $w_1, ..., w_m$ is $Ab$, which $A$ is the matrix of $T$ in corresponding basis.**
+
+So by matrix multiplication  we have
+$$
+(Tv_1, ...,Tv_n)=(w_1, ...,w_m)
+\begin{pmatrix}
+A_{11}&A_{12}&...&A_{1n}\\
+A_{21}&A_{22}&...&A_{2n}\\
+&...&...\\
+A_{m1}&A_{m2}&...&A_{mn}\\ 
+\end{pmatrix}=(w_1, ...,w_m)A
+$$
+
+
+
+
+
+
 The result above can be used to think of every linear map (from a finite-dimensional vector space to another finite-dimensional vector space) as a matrix multiplication map after suitable relabeling via the isomorphisms given by $\mathcal M$.
 
 Specifically, if $T \in \mathcal L(V, W)$ and we identify $v \in V$ with $\mathcal M(v) \in F^{n,1}$, then the result above says that we can identify $Tv$ with $\mathcal M(𝑇)\mathcal M(𝑣)$.
@@ -382,6 +401,33 @@ Because the result above allows us to think (via isomorphisms) of each linear ma
 One of the themes of many of the most important results in later chapters will be **the choice of a basis** that makes the matrix $A$ **as simple as possible**.
 
 **sometimes thinking of linear maps as matrices (or thinking of matrices as linearmaps) gives important insights that we will find useful.**
+
+
+
+
+
+#### Change of basis  (Important!)
+
+Suppose $T \in \mathcal L(V)$. Suppose $u_1, ..., u_n$ and $v_1, ..., v_n$ are  bases of $V$. Let
+$$
+A = \mathcal{M}(T, (u_1, ...,u_n)) \  \text{and} \ B= \mathcal{M}(T, (v_1, ...,v_n))
+$$
+and $C = \mathcal{M}(I, (u_1, ...,u_n), (v_1, ...,v_n))$, Then 
+$$
+A = C^{-1}BC
+$$
+
+
+
+
+We say $C$ is a **transition matrix** from basis $u_1, ..., u_n$ to basis $v_1, ..., v_n$.
+$$
+Iu_k = u_k = C_{1, k}v_1+ ...+C_{n,k}v_n \\
+I(u_1, ..., u_n) = (u_1, ..., u_n)=(v_1, ...,v_n)C
+$$
+Since $I$ is identity operator, it's invertible and $C^{-1} = \mathcal{M}(I, (v_1, ...,v_n), (u_1, ...,u_n))$
+
+
 
 
 
