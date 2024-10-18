@@ -173,7 +173,7 @@ $$
 
 #### Weak Law of Large Numbers
 
-Let $\{X_n\}$ be a sequence of i.i.d random variables having common mean $\mu$ and variance $\sigma^2 < \infty$.
+Let $\{X_n\}$ be a sequence of **i.i.d** random variables having common mean $\mu$ and variance $\sigma^2 < \infty$.
 $$
 \bar{X}_n\xrightarrow{P}\mu.
 $$
